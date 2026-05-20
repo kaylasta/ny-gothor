@@ -73,7 +73,7 @@ public class CombatSystem {
     // Attack resolution
     // -------------------------------------------------------------------------
     /**
-     * Resolves one full round: player attacks, then — if the monster survives —
+     * Resolves one full round: player attacks, then - if the monster survives -
      * the monster attacks.
      */
     private void resolveAttackRound(Player player, Monster monster) {
@@ -119,7 +119,7 @@ public class CombatSystem {
             if (choice == 1 || choice == 2) {
                 return choice;
             }
-            ui.type("Invalid input — enter 1 to fight or 2 to run.", 50);
+            ui.type("Invalid input - enter 1 to fight or 2 to run.", 50);
         }
     }
 
@@ -135,7 +135,7 @@ public class CombatSystem {
                     return item;
                 }
             }
-            ui.type("Invalid input — enter the exact item name.", 50);
+            ui.type("Invalid input - enter the exact item name.", 50);
         }
     }
 

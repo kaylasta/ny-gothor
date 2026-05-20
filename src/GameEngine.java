@@ -323,7 +323,7 @@ public class GameEngine {
         }
 
         if (!player.hasSpokenIncantation()) {
-            // No incantation — player is compelled to their death
+            // No incantation - player is compelled to their death
             for (String line : StoryText.NY_GOTHOR_WITHOUT_INCANTATION) {
                 ui.type(line);
             }
@@ -331,7 +331,7 @@ public class GameEngine {
             return;
         }
 
-        // Incantation spoken — player fights Ny'Gothor
+        // Incantation spoken - player fights Ny'Gothor
         for (String line : StoryText.NY_GOTHOR_WITH_INCANTATION) {
             ui.type(line);
         }
@@ -345,7 +345,7 @@ public class GameEngine {
             return;
         }
 
-        // Ny'Gothor defeated — play ending based on remaining sanity
+        // Ny'Gothor defeated - play ending based on remaining sanity
         printEnding(player);
     }
 

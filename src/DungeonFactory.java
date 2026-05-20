@@ -91,7 +91,7 @@ public class DungeonFactory {
         int midCount  = spine.size() - 2;
         int altarHost = spine.get(1 + rnd.nextInt(midCount));
         addLink(rooms[altarHost], ALTAR_ROOM_INDEX);
-        // Altar and end rooms are terminal — no outward links; player uses -1.
+        // Altar and end rooms are terminal - no outward links; player uses -1.
  
         // --- SIDE BRANCHES ---
         // Remaining pool rooms become dead-end branches off random spine rooms.

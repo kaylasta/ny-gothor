@@ -19,7 +19,7 @@ public class StoryText {
             + "Trees of unnatural thickness loom overhead, their coiling branches forming grotesque, whispering arches beneath which you walk. "
             + "Everyone acknowledges the heavy feeling in the air, though no one speaks of it. You venture deeper into the wilderness, straying further from the path.",
 
-        "Two days have passed since you left the trail. Formations of rocks — perhaps carved in forgotten epochs by hands long since turned to dust — lie "
+        "Two days have passed since you left the trail. Formations of rocks - perhaps carved in forgotten epochs by hands long since turned to dust - lie "
             + "scattered among the descending hills in a way that feels intentional.",
 
         "The aeolian sounds passing through the trees ceased yesterday, leaving only the sound of your group's idle chatter "
@@ -59,22 +59,22 @@ public class StoryText {
     // -------------------------------------------------------------------------
 
     public static final String[] NY_GOTHOR_SHARED = {
-        "As you wander deeper into the cavern you find your spirit, your very soul, weighed down by the air — as if a dark blanket lay upon you.",
+        "As you wander deeper into the cavern you find your spirit, your very soul, weighed down by the air - as if a dark blanket lay upon you.",
         "The passage seems to twist unnaturally in a pattern mimicking that of a spiral, as though reality itself grows pliable.",
         "The stones around you grow darker till they become uniform, only identifiable by the starry reflection cast upon them by your ever weakening light.",
         "The passage begins to widen as a cacophonous sound shakes your mind.",
-        "Before you lies an abomination that words of this language cannot describe — a being whose very existence defies the fragile laws of the world you thought you knew.",
+        "Before you lies an abomination that words of this language cannot describe - a being whose very existence defies the fragile laws of the world you thought you knew.",
         "Its form writhes and shifts ceaselessly, an entropic mass of tendrils and limbs oscillating with no logical pattern.",
         "Your eyes, though terrified to bear witness, catch glimpses of numerous orbs glowing with an unnatural, malignant light.",
-        "These eyes — if eyes they can be called — stare through you, as if they perceive more than your flesh, as if they perceive the very essence of your existence.",
+        "These eyes - if eyes they can be called - stare through you, as if they perceive more than your flesh, as if they perceive the very essence of your existence.",
         "The air here hums as if it were in pain, bending to the will of the creature.",
-        "The walls of this chamber could not be discerned from that of the night sky — calling them cosmic would hardly describe it — yet through your paralysed gaze you notice carvings of ancient symbols, older than humanity itself, pulsing."
+        "The walls of this chamber could not be discerned from that of the night sky - calling them cosmic would hardly describe it - yet through your paralysed gaze you notice carvings of ancient symbols, older than humanity itself, pulsing."
     };
 
     public static final String[] NY_GOTHOR_WITH_INCANTATION = {
         "You feel these markings twist your perception but you maintain your grasp on reality. Beyond the creature, at the farthest edge of the cavern, the abyss yawns wide.",
         "It cannot be defined as a chasm, rather a gaping void revealing the infinite darkness beyond. Your eyes get caught in this void, unable to deter the thought that something far greater lies within.",
-        "You feel a pull of madness there, a beckoning from the cosmos that promises knowledge — knowledge that will unravel your very soul.",
+        "You feel a pull of madness there, a beckoning from the cosmos that promises knowledge - knowledge that will unravel your very soul.",
         "You realise with sickening clarity that you are no longer a part of the world you once knew. You are but a fleeting speck before the vast forces that lurk beyond the stars…",
         "Yet this does not deter you."
     };
@@ -98,7 +98,7 @@ public class StoryText {
     };
 
     public static final String[] ENDING_GOOD = {
-        "In its absence, the shroud of darkness lifts, revealing a passage concealed in the stone — a crack holding a faint luminescence.",
+        "In its absence, the shroud of darkness lifts, revealing a passage concealed in the stone - a crack holding a faint luminescence.",
         "Driven by desperation to leave this place, you drag your battered body toward the opening. At its base, a flight of narrow steps spirals upward, their uneven contours carved with irregularity.",
         "With no other recourse you brace yourself and begin the climb. Time bleeds into insignificance, and the journey becomes a blur of strained breath and trembling limbs.",
         "It is as though the staircase itself conspires against you, extending its winding path far beyond comprehension.",
@@ -146,8 +146,8 @@ public class StoryText {
         "The chamber opens into a grand, circular space, the ceiling lost in shadows far above. In the centre stands an altar of black stone, its surface etched with unreadable glyphs that seem to pulse faintly in the dim light.",
         "The room is unnervingly symmetrical, every corner too sharp, every line too perfect. The air buzzes with a low, almost imperceptible hum, while a faint vibration runs through the stone floor.",
         "The space is cramped, suffocating even, with the ceiling sagging as though the weight of countless eons threatens to crush all within. In the corner a mound of strange, decayed fabric lies, its contents shifting ever so slightly.",
-        "This room feels wrong, as if it exists in defiance of natural law. The air is dense, thick with a palpable sense of unease. Strange angular shapes cover the walls — symbols that seem to shift and change when viewed out of the corner of your eye. The ceiling drips with a viscous fluid that evaporates before reaching the ground, leaving the room in a constant state of strange anticipation.",
-        "A circular pit dominates the centre of the room, surrounded by jagged, unnatural formations that seem to grow from the floor. The pit is impossibly deep, and from within it rises a foul, cloying mist that carries with it whispers — faint and indistinct, but unmistakably filled with fear and despair.",
+        "This room feels wrong, as if it exists in defiance of natural law. The air is dense, thick with a palpable sense of unease. Strange angular shapes cover the walls - symbols that seem to shift and change when viewed out of the corner of your eye. The ceiling drips with a viscous fluid that evaporates before reaching the ground, leaving the room in a constant state of strange anticipation.",
+        "A circular pit dominates the centre of the room, surrounded by jagged, unnatural formations that seem to grow from the floor. The pit is impossibly deep, and from within it rises a foul, cloying mist that carries with it whispers - faint and indistinct, but unmistakably filled with fear and despair.",
         "The room is vast, but the oppressive darkness swallows all but the immediate space around you. The ground beneath your feet is uneven, as though the floor is slowly warping under the weight of something beyond human reckoning.",
         "A faint blue light seeps into the room from an unknown source, casting long, distorted shadows across the floor. The walls are etched with strange geometric patterns that seem to lead your eye in circles, drawing you deeper into their maddening design."
     };
