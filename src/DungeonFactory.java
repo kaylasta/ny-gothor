@@ -1,6 +1,6 @@
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
 /**
  * Responsible for generating the dungeon: creating rooms, assigning connections
@@ -19,9 +19,6 @@ public class DungeonFactory {
     // Spawn chances (percentage)
     private static final int MONSTER_SPAWN_CHANCE = 20;
     private static final int ITEM_SPAWN_CHANCE = 50;
-
-    // Max attempts before falling back when searching for unique indices
-    private static final int MAX_INDEX_ATTEMPTS = 10;
 
     private final Random rnd = new Random();
 
@@ -51,59 +48,69 @@ public class DungeonFactory {
     // -------------------------------------------------------------------------
     // Connection assignment
     // -------------------------------------------------------------------------
+
     /**
-     * Assigns each room a random set of outgoing connections. Uses a global
-     * used-index set so that no two rooms share the same destination, which
-     * prevents unreachable duplicates. Falls back to the start room (index 0)
-     * if a unique index cannot be found within the attempt limit.
+     * Builds a directed dungeon graph with three guarantees:
+     *
+     * Room indices 3-(ROOM_COUNT-1) are the regular pool, shuffled each run
+     * so the layout varies while the structure remains sound.
      */
     private void assignConnections(Room[] rooms) {
-        Set<Integer> globalUsed = new HashSet<>();
-
+ 
+        // Initialise every room with an empty link list.
         for (Room room : rooms) {
-            int idx = room.getIndex();
-
-            // Special-case connection counts
-            int connections;
-            connections = switch (idx) {
-                case START_ROOM_INDEX ->
-                    2;
-                case ALTAR_ROOM_INDEX, END_ROOM_INDEX ->
-                    0;
-                default ->
-                    rnd.nextInt(3) + 1;
-            }; // Terminal rooms — no outward paths
-
-            int[] linked = new int[connections];
-            Set<Integer> localUsed = new HashSet<>();
-
-            for (int x = 0; x < connections; x++) {
-                boolean found = false;
-                int attempts = 0;
-
-                while (!found && attempts < MAX_INDEX_ATTEMPTS) {
-                    int candidate = rnd.nextInt(rooms.length);
-
-                    if (candidate != idx
-                            && !localUsed.contains(candidate)
-                            && !globalUsed.contains(candidate)) {
-                        linked[x] = candidate;
-                        localUsed.add(candidate);
-                        globalUsed.add(candidate);
-                        found = true;
-                    } else {
-                        attempts++;
-                    }
-                }
-
-                if (!found) {
-                    // Fall back: loop back to start so the room is never a dead end
-                    linked[x] = START_ROOM_INDEX;
-                }
-            }
-
-            room.setLinkedIndices(linked);
+            room.setLinkedIndices(new int[0]);
         }
+ 
+        // Build a shuffled pool of all regular room indices (3 ... ROOM_COUNT-1).
+        List<Integer> pool = new ArrayList<>();
+        for (int i = 3; i < ROOM_COUNT; i++) {
+            pool.add(i);
+        }
+        java.util.Collections.shuffle(pool, rnd);
+ 
+        // --- SPINE ---
+        // Pick 2-4 rooms from the pool to sit between START and END.
+        int spineLength = Math.min(2 + rnd.nextInt(3), pool.size());
+ 
+        List<Integer> spine = new ArrayList<>();
+        spine.add(START_ROOM_INDEX);
+        for (int i = 0; i < spineLength; i++) {
+            spine.add(pool.remove(0));
+        }
+        spine.add(END_ROOM_INDEX);
+ 
+        // Wire the spine forward: each room links to the next.
+        for (int i = 0; i < spine.size() - 1; i++) {
+            addLink(rooms[spine.get(i)], spine.get(i + 1));
+        }
+ 
+        // --- ALTAR BRANCH ---
+        // Attach the altar off a random mid-spine room (spine[1] to spine[n-2]).
+        // Mid-spine is always at least 1 room since spineLength >= 2.
+        int midCount  = spine.size() - 2;
+        int altarHost = spine.get(1 + rnd.nextInt(midCount));
+        addLink(rooms[altarHost], ALTAR_ROOM_INDEX);
+        // Altar and end rooms are terminal — no outward links; player uses -1.
+ 
+        // --- SIDE BRANCHES ---
+        // Remaining pool rooms become dead-end branches off random spine rooms.
+        // END is excluded as a host since it is terminal.
+        List<Integer> hosts = new ArrayList<>(spine.subList(0, spine.size() - 1));
+        for (int branchRoom : pool) {
+            addLink(rooms[hosts.get(rnd.nextInt(hosts.size()))], branchRoom);
+        }
+    }
+ 
+    /**
+     * Appends {@code target} to {@code room}'s linked-indices array.
+     */
+    private void addLink(Room room, int target) {
+        int[] existing = room.getLinkedIndices();
+        int[] updated  = new int[existing.length + 1];
+        System.arraycopy(existing, 0, updated, 0, existing.length);
+        updated[existing.length] = target;
+        room.setLinkedIndices(updated);
     }
 
     // -------------------------------------------------------------------------
