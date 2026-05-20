@@ -130,7 +130,7 @@ public class StoryText {
         "The cavern yawns open, its towering stalactites resembling the fangs of some primordial beast. Shadows dance erratically across the ground, though no flame illuminates the space.",
         "A passage winds in a serpentine manner, constricting like the coils of a serpent. An oppressive silence fills the space, broken only by the faint sound of dripping water far in the unseen depths.",
         "A tunnel twists unnervingly, its walls seeming to ripple like water disturbed by some unseen force. The floor looks wrong, as though it shifts slightly, responding to your presence.",
-        "A stifling darkness envelops the corridor ahead, the kind that seems to swallow light whole. Faint, echoing sounds drift through the space — whether the cries of distant explorers or the last gasps of something far more ancient and terrible, you cannot tell.",
+        "A stifling darkness envelops the corridor ahead, the kind that seems to swallow light whole. Faint, echoing sounds drift through the space - whether the cries of distant explorers or the last gasps of something far more ancient and terrible, you cannot tell.",
         "The path curves sharply here, vanishing into a maw of impenetrable shadow. A faint glow emanates from the stone, though its source is unknown, and the oppressive atmosphere suggests something old.",
         "A low, steady hum resonates through the tunnel, as if the earth itself sings an alien hymn. The walls are covered in strange, phosphorescent fungi that cast an unholy light, illuminating strange patterns in the rock."
     };
