@@ -31,9 +31,6 @@ java NyGothor // Run program
 
 Save files can be found in ```C:\Users\YOUR_USER\Documents\Ny-Gothor Saves```
 
-## Known Issues
-
-* Dungeon generation, on occasion, has inaccessible rooms or prevents progression
 
 ## License
 
